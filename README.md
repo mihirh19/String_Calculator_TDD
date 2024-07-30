@@ -2,6 +2,11 @@
 
 This project implements a simple string calculator using Test-Driven Development (TDD) principles. The calculator can handle different delimiters, including commas and new lines, and can be configured to use custom delimiters. It also throws exceptions for negative numbers.
 
+# Docker Image:
+```
+docker pull mihir2109/string_cal
+```
+
 # 🏭 Project Structure
 
     ├── src
