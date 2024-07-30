@@ -51,3 +51,8 @@ def test_add_negative_numbers():
 def test_add_custom_delimiter_with_newline():
    cal = string_calculator()
    assert cal.add("//\n\n1\n2\n3") == 6
+
+def test_non_numeric_characters():
+   cal = string_calculator()
+   with pytest.raises(ValueError, match="invalid input: a"):
+      cal.add("1,a")
