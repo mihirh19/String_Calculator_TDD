@@ -6,9 +6,15 @@ class string_calculator:
       delimiter = ','
 
       if numbers.startswith("//"):
-         delimiter, numbers = numbers[2:].split("\n", 1)
-
-      numbers = numbers.replace('\n', delimiter)
+         delimiter_part, numbers = numbers.split("\n", 1)
+         delimiter = delimiter_part[2:]
+         if delimiter == "":
+            delimiter = "\n"
+      
+      # Replace new lines with delimiters
+      if delimiter != "\n":
+         numbers = numbers.replace("\n", delimiter)
+      
       integers_to_add= re.split(re.escape(delimiter), numbers)
       integers_to_add= list(map(int, integers_to_add))
       
