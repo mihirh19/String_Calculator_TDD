@@ -16,7 +16,19 @@ class string_calculator:
          numbers = numbers.replace("\n", delimiter)
       
       integers_to_add= re.split(re.escape(delimiter), numbers)
-      integers_to_add= list(map(int, integers_to_add))
+      integers = []
+      invalid_inputs =[]
+      for number in integers_to_add.copy():
+         number = number.strip()
+         if number == '':
+            continue
+         if re.match(r'^-?\d+$', number):
+            integers.append(int(number))
+         else:
+            invalid_inputs.append(number)
+      integers_to_add = integers
+      if invalid_inputs:
+         raise ValueError(f"invalid input: {', '.join(invalid_inputs)}")
       
       
       negative_numbers = [number for number in integers_to_add if number < 0]
