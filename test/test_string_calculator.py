@@ -29,3 +29,8 @@ def test_add_newline_delimiter():
    cal = string_calculator()
    assert cal.add("1\n2,3") == 6
    assert cal.add("5\n4\n3") == 12
+
+def test_add_custom_delimiter():
+   cal = string_calculator()
+   assert cal.add("//;\n1;2") == 3
+   assert cal.add("//;\n5;4\n3") == 12
