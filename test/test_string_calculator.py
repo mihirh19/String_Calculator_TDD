@@ -47,3 +47,7 @@ def test_add_negative_numbers():
       cal.add("-1")
    with pytest.raises(ValueError, match="negative numbers not allowed: -1, -3, -4"):
       cal.add('-1,-3,-4,6')
+
+def test_add_custom_delimiter_with_newline():
+   cal = string_calculator()
+   assert cal.add("//\n\n1\n2\n3") == 6
