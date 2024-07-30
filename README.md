@@ -2,6 +2,13 @@
 
 This project implements a simple string calculator using Test-Driven Development (TDD) principles. The calculator can handle different delimiters, including commas and new lines, and can be configured to use custom delimiters. It also throws exceptions for negative numbers.
 
+# 🏭 Project Structure
+
+    ├── src
+    │   └── string_calculator.py
+    ├── test
+    │   ├──  test_string_calculator.py
+
 # 🎯 Features
 
 - Empty String: Returns 0.
