@@ -9,3 +9,8 @@ def test_add_single_number():
    cal = string_calculator()
    assert cal.add("1") == 1
    assert cal.add("2") == 2
+
+def test_add_two_numbers():
+   cal = string_calculator()
+   assert cal.add("1,2") == 3
+   assert cal.add("5,4") == 9
