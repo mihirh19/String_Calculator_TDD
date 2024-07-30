@@ -60,7 +60,7 @@ class string_calculator:
       """Convert the string to a list of integers
       
       Arguments:
-      string : integers_to_add -- list of strings
+      string : numbers -- list of strings
       Return: list -- list of integers
       """
       
