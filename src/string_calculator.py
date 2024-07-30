@@ -53,8 +53,6 @@ class string_calculator:
          
          if delimiter == "":
             delimiter = "\n"
-      else:
-         delimiter = ','
       
       return [delimiter, numbers]
 
@@ -85,14 +83,13 @@ class string_calculator:
             integers.append(int(number))
          else:
             invalid_inputs.append(number)
-      integers_to_add = integers
    
       
       # Raise an error if there are invalid inputs
       if invalid_inputs:
          raise ValueError(f"invalid input: {', '.join(invalid_inputs)}")
       
-      return integers_to_add
+      return integers
    
    
    def __check_negative_numbers(self, integers_to_add : list):
