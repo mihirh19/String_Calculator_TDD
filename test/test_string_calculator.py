@@ -34,3 +34,16 @@ def test_add_custom_delimiter():
    cal = string_calculator()
    assert cal.add("//;\n1;2") == 3
    assert cal.add("//;\n5;4\n3") == 12
+
+def test_add_custom_delimiter2():
+   cal = string_calculator()
+   assert cal.add("//|\n1|2") == 3
+   assert cal.add("//|\n5|4\n3") == 12
+   assert cal.add("//**\n5**4\n3**2") == 14
+
+def test_add_negative_numbers():
+   cal = string_calculator()
+   with pytest.raises(ValueError, match="negative numbers not allowed: -1"):
+      cal.add("-1")
+   with pytest.raises(ValueError, match="negative numbers not allowed: -1, -3, -4"):
+      cal.add('-1,-3,-4,6')
