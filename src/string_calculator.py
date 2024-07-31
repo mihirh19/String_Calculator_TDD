@@ -49,10 +49,14 @@ class string_calculator:
       if numbers.startswith("//"):
          # Split the string into delimiter and numbers on the first new line
          delimiter_part, numbers = numbers.split("\n", 1)
-         delimiter = delimiter_part[2:]
+         delimiter_section = delimiter_part[2:]
+         if delimiter_section.startswith('[') and delimiter_section.endswith(']'):
+            delimiter_section = delimiter_section[1:-1]
+            delimiters = re.split(r'\]\[', delimiter_section)
+            delimiter = '|'.join(map(re.escape, delimiters))
+         else:
+            delimiter = re.escape(delimiter_section)
          
-         if delimiter == "":
-            delimiter = "\n"
       
       return [delimiter, numbers]
 
@@ -65,12 +69,9 @@ class string_calculator:
       """
       
       
-      # Replace new lines with delimiters
-      if delimiter != "\n":
-         numbers = numbers.replace("\n", delimiter)
       
       # Split the numbers into a list
-      integers_to_add= re.split(re.escape(delimiter), numbers)
+      integers_to_add= re.split(f'{delimiter}|\n', numbers)
       integers = []
       invalid_inputs = []
       

@@ -74,3 +74,9 @@ def test_add_ignore_numbers_greater_than_1000():
    """Test case for numbers greater than 1000 are ignored."""
    cal = string_calculator()
    assert cal.add("1001,2") == 2
+
+def test_add_custom_delimiter_with_any_length():
+   """Test case for custom delimiter with any length returns the sum of the numbers."""
+   cal = string_calculator()
+   assert cal.add("//[**]\n1**2**3") == 6
+   assert cal.add("//[**][;]\n5**4;3") == 12
