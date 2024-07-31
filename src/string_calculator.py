@@ -30,7 +30,7 @@ class string_calculator:
       # check if there are negative numbers in the list
       self.__check_negative_numbers(integers_to_add)
       
-      
+      integers_to_add = self.__ignore_numbers_greater_than_1000(integers_to_add)
       
       # return the sum of the numbers
       return sum(integers_to_add)
@@ -106,3 +106,13 @@ class string_calculator:
       # Raise an error if there are negative numbers
       if negative_numbers:
          raise ValueError(f"negative numbers not allowed: {', '.join(map(str, negative_numbers))}")
+   
+   def __ignore_numbers_greater_than_1000(self, integers_to_add : list) -> list:
+      """Ignore numbers greater than 1000
+      
+      Arguments:
+      list : integers_to_add -- list of integers
+      Return: list -- list of integers
+      """
+      
+      return [number for number in integers_to_add if number <= 1000]

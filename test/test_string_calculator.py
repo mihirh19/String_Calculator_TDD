@@ -69,3 +69,8 @@ def test_non_numeric_characters():
    cal = string_calculator()
    with pytest.raises(ValueError, match="invalid input: a"):
       cal.add("1,a")
+   
+def test_add_ignore_numbers_greater_than_1000():
+   """Test case for numbers greater than 1000 are ignored."""
+   cal = string_calculator()
+   assert cal.add("1001,2") == 2
