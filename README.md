@@ -69,6 +69,8 @@ The pytest framework makes it easy to write small, readable tests, and can scale
 - `test_add_negative_numbers()` : Test case for negative numbers raises an error.
 - `test_add_custom_delimiter_with_newline()` : Test case for custom delimiter as newline returns the sum of the numbers.
 - `test_non_numeric_characters()` : Test case for non-numeric characters raises an error.
+- `test_add_ignore_numbers_greater_than_1000()` : Test case for numbers greater than 1000 are ignored.
+- `test_add_custom_delimiter_with_any_length()` : Test case for custom delimiter with any length returns the sum of the numbers.
 
 ## Author
 
